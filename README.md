@@ -53,7 +53,7 @@ erdcloud 링크 :
 
 #### 기능 명세서
 
-- 노션 링크 : https://better-jumpsuit-1f8.notion.site/6148cbfebbf84486acf198174dc590ea?v=24f8b6ae2580413ba16b23ff75497949&pvs=4
+- 노션 링크 : https://better-jumpsuit-1f8.notion.site/3eb7c54faee1405a9340949eeeacb4bb?pvs=4
 
 #### API 명세서
 
