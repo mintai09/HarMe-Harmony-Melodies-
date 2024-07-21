@@ -34,18 +34,12 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 <br>
 
 ## 💡 주요 기능
-### 1. Generative AI
-
-### 2.
-
-### 3.
-
-### 4.
+<img src="https://github.com/user-attachments/assets/e897a9a1-d882-4e23-a57c-d7866e3c393b" width="80%"></img>
 
 <br>
 
 ## 🎙️ 서비스 화면
-
+<img src="https://github.com/user-attachments/assets/c30ab7ca-d6ce-4d68-b717-cf2cd93860bb" width="80%"></img>
 <br>
 
 ## 💖 ERD
