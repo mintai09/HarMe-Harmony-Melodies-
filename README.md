@@ -1,10 +1,8 @@
 # HarMe(Harmony-Melodies) - 생성형 AI를 활용한 작곡 서비스
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/88516d91-e758-429f-8f74-4751b58dedaa" width="40%"></img>
-<br />
+https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 
-https://github.com/user-attachments/assets/3b9e1d9b-8518-449d-9509-ee6ae21241e6
 
 </div>
 <br>
@@ -69,7 +67,7 @@ erdcloud 링크 :
 <br>
 
 ## 🚧 서비스 아키텍쳐
-
+<img src="https://github.com/user-attachments/assets/083aa946-17dd-44c0-b2de-1e05aca9e311" width="80%"></img>
 <br>
 
 ## 🛠 기술 스택
