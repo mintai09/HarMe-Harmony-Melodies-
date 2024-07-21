@@ -2,7 +2,7 @@
 
 https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 
-# 📖목차
+# 📌 목차
 
 - [README](#readme)
   - [🤔 기획 배경](#-기획-배경)
@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
   - [🚧 서비스 아키텍쳐](#-서비스-아키텍쳐)
   - [🛠 기술 스택](#-기술-스택)
   - [📂 파일 구조](#-파일-구조)
-  - [❤ 팀원 소개](#-팀원-소개)
+  - [🐰 팀원 소개](#-팀원-소개)
 
 <br>
 <br>
@@ -44,22 +44,21 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 
 <br>
 
-## 서비스 화면
+## 🎙️ 서비스 화면
 
 <br>
 
-## ERD
+## 💖 ERD
 
-erdcloud 링크 :
+#### 🔗 [erdcloud]()
 
-<br>
 <br>
 
 ## 📝 설계 문서
 
 #### 🔗 [기능명세서](https://better-jumpsuit-1f8.notion.site/3eb7c54faee1405a9340949eeeacb4bb?pvs=4)
 
-#### 🔗 [API 명세서]()
+#### 🔗 [API 명세서](https://better-jumpsuit-1f8.notion.site/Api-03be9726dc4246ebaea6bc1310bfed29?pvs=4)
 
 <br>
 
@@ -70,20 +69,23 @@ erdcloud 링크 :
 
 ## 🛠 기술 스택
 
-### ☑Backend & AI
+### 🍓 AI
+- ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white) : 
+
+### 🥕 Backend
 
 - ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) : 17.0.9
 - ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white) : 3.2.5
 - **JPA** : 3.25
 - ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white) : 8.0.34
-- **(Maira DB)** : 8.0.34
+- **Maira DB** : 8.0.34
 
-### ☑Frontend
+### 🥝 Frontend
 
-- **Next.js** : 14.2.5
-- **React** : 18
+- ![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge) : 14.2.5
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) : 18
 
-### ☑협업 툴
+### 🫐 협업 툴
 
 - ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 - ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
@@ -175,14 +177,14 @@ erdcloud 링크 :
 </details>
 <br>
 
-## 팀 구성
+## 🐰 팀 구성
 
 | 이름         | 역할   |
 | ------------ | ------ |
-| 김민태(팀장) | - <br> |
-| 김현진       | - <br> |
-| 석지원       | - <br> |
-| 오승태       | - <br> |
-| 이대영       | - <br> |
+| 김민태       | - Leader, AI <br>|
+| 김현진       | - BE <br> |
+| 석지원       | - UI/UX <br> |
+| 오승태       | - FE <br> |
+| 이대영       | - BE, AI, Infra <br> |
 
 <br>
