@@ -3,9 +3,10 @@
 <div align="center">
 <img src="https://github.com/user-attachments/assets/88516d91-e758-429f-8f74-4751b58dedaa" width="40%"></img>
 <br />
-<audio src="./Demo/A).mp3" controls="true"></audio>
-</div>
 
+https://github.com/user-attachments/assets/3b9e1d9b-8518-449d-9509-ee6ae21241e6
+
+</div>
 <br>
 
 # 📖목차
