@@ -1,11 +1,6 @@
 # HarMe(Harmony-Melodies) - 생성형 AI를 활용한 작곡 서비스
 
-<div align="center">
 https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
-
-
-</div>
-<br>
 
 # 📖목차
 
