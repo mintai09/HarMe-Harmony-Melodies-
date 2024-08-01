@@ -16,14 +16,10 @@ public class MypageService {
     private final MypageRepository mypageRepository;
 
     public List<MypageResponseDto> getUserPlayedMusic(Long userId) {
-        List<MusicEntity> musicEntities = mypageRepository.findMusicByUserIdOrderByPlayTimeDesc(userId);
-
-        return musicEntities.stream()
-                .map(music -> new MypageResponseDto(
-                        music.getMusicTitle(),
-                        music.getMusicImage(),
-                        music.getMusicLyrics(),
-                        music.getMusicUrl()
+        return mypageRepository.findPlaysByUserIdOrderByPlayTimeDesc(userId).stream()
+                .map(play -> new MypageResponseDto(
+                        play.getMusic().getMusicTitle(),
+                        play.getMusic().getMusicImage()
                 ))
                 .collect(Collectors.toList());
     }

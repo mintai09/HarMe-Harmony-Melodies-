@@ -1,7 +1,8 @@
 package harme.music.listening.controller;
 
 import harme.music.listening.dto.request.ImageRequestDto;
-import harme.music.listening.dto.request.MusicRequestDto;
+import harme.music.listening.dto.request.ListeningMusicRequest;
+import harme.music.listening.dto.request.MakingMusicRequestDto;
 import harme.music.listening.dto.response.ImageResponseDto;
 import harme.music.listening.dto.response.MusicResponseDto;
 import harme.music.listening.service.MusicImageService;
@@ -24,17 +25,41 @@ public class MusicController {
     private final MusicImageService musicImageService;
     private final MusicService musicService;
 
-    @PostMapping("/generate-images")
-    @Operation(summary = "노래표지 만들기", description = "키워드로 음악표지 만들음")
+
+    /**
+     * 노래표지 만들기
+     * @param imageRequestDto
+     * @return
+     */
+    @PostMapping("/images")
+    @Operation(summary = "노래표지 만들기", description = "키워드로 음악표지 만들기")
     public ResponseEntity<ImageResponseDto> generateImages(@RequestBody ImageRequestDto imageRequestDto) {
         ImageResponseDto imageResponse = musicImageService.generateImages(imageRequestDto);
         return ResponseEntity.ok(imageResponse);
     }
 
+
+    /**
+     * 노래 만들기
+     * @param makingMusicRequestDto
+     * @return
+     */
     @PostMapping("/create")
-    @Operation(summary = "음악 만들기", description = "키워드로 음악 만들음")
-    public ResponseEntity<MusicResponseDto> createMusic(@RequestBody MusicRequestDto musicRequestDto) {
-        MusicResponseDto musicResponse = musicService.createMusic(musicRequestDto);
+    @Operation(summary = "노래 만들기", description = "키워드로 노래 만들기")
+    public ResponseEntity<MusicResponseDto> createMusic(@RequestBody MakingMusicRequestDto makingMusicRequestDto) {
+        MusicResponseDto musicResponse = musicService.createMusic(makingMusicRequestDto);
         return ResponseEntity.ok(musicResponse);
+    }
+
+    /**
+     * 음악 조회하기
+     * @param request
+     * @return
+     */
+    @PostMapping("/listen")
+    @Operation(summary = "음악 조회", description = "음악 조회하기")
+    public ResponseEntity<MusicResponseDto> findMusicByTitle(@RequestBody ListeningMusicRequest request) {
+        MusicResponseDto response = musicService.findMusicByTitle(request.getMusicTitle());
+        return ResponseEntity.ok(response);
     }
 }

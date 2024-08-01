@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/harme?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
-    username: ssafy
-    password: ssafy
+    url: jdbc:mysql://43.201.54.73:3306/harme?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+    username: harme
+    password: harme
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

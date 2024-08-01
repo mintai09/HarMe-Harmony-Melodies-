@@ -13,13 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mypage")
+@RequestMapping("/api/mypage")
 @RequiredArgsConstructor
 @Tag(name = "Mypage-Controller", description = "마이페이지 API")
 public class MypageController {
 
     private final MypageService mypageService;
 
+
+    /**
+     * 사용자의 노래리스트 보기
+     * @param userId
+     * @return
+     */
     @GetMapping("/songs/{userId}")
     public ResponseEntity<List<MypageResponseDto>> getUserPlayedMusic(@PathVariable Long userId) {
         List<MypageResponseDto> musicList = mypageService.getUserPlayedMusic(userId);

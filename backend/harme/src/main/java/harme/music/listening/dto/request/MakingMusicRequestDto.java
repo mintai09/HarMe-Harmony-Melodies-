@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MusicRequestDto {
+public class MakingMusicRequestDto {
     private String musicImage;
 }

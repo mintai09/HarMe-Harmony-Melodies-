@@ -1,4 +1,4 @@
-package harme.mypage.dto.Response;
+package harme.music.listening.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MypageResponseDto {
+public class ListeningMusicRequest {
     private String musicTitle;
-    private String musicImage;
 }

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 public class MusicImageService {
 
     public ImageResponseDto generateImages(ImageRequestDto imageRequestDto) {
-        String imageUrl1 = "generated_image_url_1";
-        String imageUrl2 = "generated_image_url_2";
+        String imageUrl1 = "";
+        String imageUrl2 = "";
 
         return new ImageResponseDto(imageUrl1, imageUrl2);
     }
