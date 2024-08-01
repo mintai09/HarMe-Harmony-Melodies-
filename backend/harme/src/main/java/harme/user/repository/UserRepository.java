@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
-    @Query("Select u from UserEntity u WHERE u.nickName like :nickname")
+    @Query("Select u from users u WHERE u.nickName like :nickname")
     Optional<UserEntity> findByNickname(@Param("nickname") String nickname);
 }

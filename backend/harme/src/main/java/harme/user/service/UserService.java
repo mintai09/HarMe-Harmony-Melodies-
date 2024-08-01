@@ -25,4 +25,5 @@ public class UserService {
     public boolean findNickname(String nickName) {
         return userRepository.findByNickname(nickName).isEmpty();
     }
+
 }
