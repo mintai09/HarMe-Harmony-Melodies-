@@ -15,6 +15,12 @@ public class MypageService {
 
     private final MypageRepository mypageRepository;
 
+
+    /**
+     * 사용자의 노래리스트 보기
+     * @param userId
+     * @return
+     */
     public List<MypageResponseDto> getUserPlayedMusic(Long userId) {
         return mypageRepository.findPlaysByUserIdOrderByPlayTimeDesc(userId).stream()
                 .map(play -> new MypageResponseDto(
