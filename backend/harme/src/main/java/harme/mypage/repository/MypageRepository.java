@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MypageRepository extends JpaRepository<PlayEntity, Long> {
 
-    @Query("SELECT p FROM PlayEntity p WHERE p.userId = :userId ORDER BY p.playTime DESC")
+    @Query("SELECT p FROM PlayEntity p WHERE p.user = :userId ORDER BY p.playTime DESC")
     List<PlayEntity> findPlaysByUserIdOrderByPlayTimeDesc(@Param("userId") Long userId);
 }
 

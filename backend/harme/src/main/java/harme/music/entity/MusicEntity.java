@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @NoArgsConstructor
@@ -24,18 +26,18 @@ public class MusicEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
-    @Column(name = "music_keyword", nullable = false)
-    private String musicKeyword;
-
-    @Column(name = "music_title", length = 50, nullable = false)
+    @Column(name = "music_title", nullable = false)
     private String musicTitle;
 
     @Column(name = "music_image", nullable = false)
     private String musicImage;
 
-    @Column(name = "music_lyrics", columnDefinition = "TEXT", nullable = false)
+    @Column(name = "music_lyrics", nullable = false)
     private String musicLyrics;
 
-    @Column(name = "music_url", columnDefinition = "TEXT", nullable = false)
+    @Column(name = "music_url", nullable = false)
     private String musicUrl;
+
+    @Column(name = "music_created_at")
+    private LocalDateTime musicCreatedAt;
 }

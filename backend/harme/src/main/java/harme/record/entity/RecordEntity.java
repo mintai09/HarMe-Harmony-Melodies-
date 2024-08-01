@@ -1,9 +1,10 @@
-package harme.mypage.entity;
+package harme.record.entity;
 
 import harme.music.entity.MusicEntity;
 import harme.user.entity.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import java.sql.Timestamp;
@@ -12,13 +13,14 @@ import java.sql.Timestamp;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "play")
-public class PlayEntity {
+@Builder
+@Table(name = "record")
+public class RecordEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "play_id")
-    private Long playId;
+    @Column(name = "record_id")
+    private Long recordId;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -28,6 +30,15 @@ public class PlayEntity {
     @JoinColumn(name = "music_id", nullable = false)
     private MusicEntity music;
 
-    @Column(name = "play_time", nullable = false)
-    private Timestamp playTime;
+    @Column(name = "record_title", nullable = false)
+    private String recordTitle;
+
+    @Column(name = "record_created_at", nullable = false)
+    private Timestamp recordCreatedAt;
+
+    @Column(name = "record_comment", nullable = false)
+    private String recordComment;
+
+    @Column(name = "record_file", nullable = false)
+    private String recordFile;
 }

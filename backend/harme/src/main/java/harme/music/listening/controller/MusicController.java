@@ -52,12 +52,12 @@ public class MusicController {
     }
 
     /**
-     * 음악 조회하기
+     * 노래 조회하기
      * @param request
      * @return
      */
     @PostMapping("/listen")
-    @Operation(summary = "음악 조회", description = "음악 조회하기")
+    @Operation(summary = "노래 조회", description = "노래 조회하기")
     public ResponseEntity<MusicResponseDto> findMusicByTitle(@RequestBody ListeningMusicRequest request) {
         MusicResponseDto response = musicService.findMusicByTitle(request.getMusicTitle());
         return ResponseEntity.ok(response);

@@ -8,6 +8,12 @@ import harme.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class MusicService {
@@ -27,6 +33,7 @@ public class MusicService {
                 .musicImage(makingMusicRequestDto.getMusicImage())
                 .musicLyrics(musicLyrics)
                 .musicUrl(musicUrl)
+                .musicCreatedAt(LocalDateTime.now())
                 .build();
 
         musicRepository.save(musicEntity);
@@ -49,4 +56,17 @@ public class MusicService {
                 music.getMusicUrl()
         );
     }
+
+    public List<MusicResponseDto> findRecentMusicByUserId(Long userId, int limit) {
+        LocalDateTime sevenDaysAgo = LocalDateTime.now().minusDays(7);
+        List<MusicEntity> recentMusic = musicRepository.findRecentMusic(userId, sevenDaysAgo, limit);
+
+        return Optional.of(recentMusic)
+                .filter(musicList -> !musicList.isEmpty())
+                .map(musicList -> musicList.stream()
+                        .map(music -> new MusicResponseDto(music.getMusicTitle(), music.getMusicImage(), null, null))
+                        .collect(Collectors.toList()))
+                .orElse(null);
+    }
+
 }
