@@ -27,6 +27,13 @@ public class RecordService {
     private final MusicRepository musicRepository;
     private final UserRepository userRepository;
 
+
+    /**
+     * 지난 음성 기록 최대 3개 보기
+     * @param userId
+     * @param limit
+     * @return
+     */
     public List<RecordResponseDto> findRecentRecordsByUserId(Long userId, int limit) {
         LocalDateTime now = LocalDateTime.now();
         List<RecordEntity> recentRecords = recordRepository.findRecentRecords(userId, now, limit);
@@ -42,6 +49,12 @@ public class RecordService {
                 .collect(Collectors.toList());
     }
 
+
+    /**
+     * 음성 기록 전부 보기
+     * @param userId
+     * @return
+     */
     public List<RecordResponseDto> findAllRecordsByUserId(Long userId) {
         List<RecordEntity> allRecords = recordRepository.findAllByUserId(userId);
 
@@ -56,6 +69,12 @@ public class RecordService {
                 .collect(Collectors.toList());
     }
 
+
+    /**
+     * 음성 기록 자세히 보기
+     * @param requestDto
+     * @return
+     */
     public RecordDetailResponseDto getRecordDetail(RecordDetailRequestDto requestDto) {
         Long userId = requestDto.getUserId();
         Long recordId = requestDto.getRecordId();
@@ -78,7 +97,11 @@ public class RecordService {
         return new RecordDetailResponseDto(musicImage, musicTitle, musicCreatedAt, recordComment, nickName, recordFile);
     }
 
-    // Record 생성
+    /**
+     * 기록 생성하기
+     * @param requestDto
+     * @return
+     */
     public RecordDetailResponseDto createRecord(RecordMakingRequestDto requestDto) {
         UserEntity user = userRepository.findById(requestDto.getUserId()).orElseThrow(() -> new RuntimeException("User not found"));
         MusicEntity music = musicRepository.findById(requestDto.getRecordId()).orElseThrow(() -> new RuntimeException("Music not found"));
@@ -103,7 +126,11 @@ public class RecordService {
         );
     }
 
-    // Record 삭제
+    /**
+     * 기록 삭제하기
+     * @param userId
+     * @param recordId
+     */
     public void deleteRecord(Long userId, Long recordId) {
         RecordEntity record = recordRepository.findByUserIdAndRecordId(userId, recordId);
         if (record != null) {

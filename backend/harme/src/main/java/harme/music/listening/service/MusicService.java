@@ -57,6 +57,12 @@ public class MusicService {
         );
     }
 
+    /**
+     * 기록 페이지에서 7일 이내 생성된 노래 최대 2개 보기
+     * @param userId
+     * @param limit
+     * @return
+     */
     public List<MusicResponseDto> findRecentMusicByUserId(Long userId, int limit) {
         LocalDateTime sevenDaysAgo = LocalDateTime.now().minusDays(7);
         List<MusicEntity> recentMusic = musicRepository.findRecentMusic(userId, sevenDaysAgo, limit);
