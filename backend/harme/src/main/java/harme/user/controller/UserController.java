@@ -9,10 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -22,9 +19,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserService userService;
 
+    @PostMapping("/login")
+    @Operation(summary = "유저 로그인", description = "기존에 회원가입한 정보를 입력해 로그인")
+    public ResponseEntity<UserResponseDto> login(@RequestBody UserDto userDto) {
+        if(userService.login(userDto).isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(new UserResponseDto(userDto.getNickName()));
+    }
+
     @PostMapping("/signup")
     @Operation(summary = "유저 등록", description = "닉네임과 패스워드를 통해 유저 등록")
-    public ResponseEntity<UserResponseDto> generate(UserDto userDto) {
+    public ResponseEntity<UserResponseDto> generate(@RequestBody UserDto userDto) {
         log.info("Generating user = {}", userDto.getNickName());
 
         userService.join(userDto);
