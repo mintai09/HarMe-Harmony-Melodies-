@@ -8,7 +8,6 @@ import harme.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class MusicService {
+public class OPService {
 
     private final MusicRepository musicRepository;
     private final UserRepository userRepository;
@@ -27,16 +26,16 @@ public class MusicService {
         String musicLyrics = "";
         String musicUrl = "";
 
-        // TODO : user, keyword, 노래 재생한 시간 저장해야함
-        MusicEntity musicEntity = MusicEntity.builder()
-                .musicTitle(musicTitle)
-                .musicImage(makingMusicRequestDto.getMusicImage())
-                .musicLyrics(musicLyrics)
-                .musicUrl(musicUrl)
-                .musicCreatedAt(LocalDateTime.now())
-                .build();
-
-        musicRepository.save(musicEntity);
+//        // TODO : user, keyword, 노래 재생한 시간 저장해야함
+//        MusicEntity musicEntity = MusicEntity.builder()
+//                .musicTitle(musicTitle)
+//                .musicImage(makingMusicRequestDto.getMusicImage())
+//                .musicLyrics(musicLyrics)
+//                .musicUrl(musicUrl)
+//                .musicCreatedAt(LocalDateTime.now())
+//                .build();
+//
+//        musicRepository.save(musicEntity);
 
         return new MusicResponseDto(musicTitle, makingMusicRequestDto.getMusicImage(), musicLyrics, musicUrl);
     }

@@ -1,10 +1,12 @@
 package harme.user.service;
 
-import harme.user.dto.UserDto;
+import harme.user.dto.UserRequestDto;
+import harme.user.dto.UserResponseDto;
 import harme.user.entity.UserEntity;
 import harme.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -15,10 +17,10 @@ import java.util.Optional;
 public class UserService {
     private final UserRepository userRepository;
 
-    public void join(UserDto userDto) {
+    public void join(UserRequestDto userRequestDto) {
         UserEntity user = UserEntity.builder()
-                .nickName(userDto.getNickName())
-                .password(userDto.getPassword())
+                .nickName(userRequestDto.getNickName())
+                .password(userRequestDto.getPassword())
                 .build();
 
         userRepository.save(user);
@@ -28,7 +30,7 @@ public class UserService {
         return userRepository.findByNickname(nickName).isEmpty();
     }
 
-    public Optional<String> login(UserDto userDto) {
-        return userRepository.findByUser(userDto.getNickName(), userDto.getPassword());
+    public Optional<UserEntity> login(UserRequestDto userRequestDto) {
+        return userRepository.findByUser(userRequestDto.getNickName(), userRequestDto.getPassword());
     }
 }

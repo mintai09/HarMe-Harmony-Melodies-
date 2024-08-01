@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class MusicRequestDto {
+    private String userId;
     private String feel;
     private String genre;
     private String singerGender;

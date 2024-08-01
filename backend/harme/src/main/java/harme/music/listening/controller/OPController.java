@@ -6,7 +6,7 @@ import harme.music.listening.dto.request.MakingMusicRequestDto;
 import harme.music.listening.dto.response.ImageResponseDto;
 import harme.music.listening.dto.response.MusicResponseDto;
 import harme.music.listening.service.MusicImageService;
-import harme.music.listening.service.MusicService;
+import harme.music.listening.service.OPService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/music")
+@RequestMapping("/api/op")
 @RequiredArgsConstructor
 @Tag(name = "Music-Controller", description = "음악 API")
-public class MusicController {
+public class OPController {
 
     private final MusicImageService musicImageService;
-    private final MusicService musicService;
+    private final OPService musicService;
 
 
     /**

@@ -2,12 +2,18 @@ package harme.music.service;
 
 import harme.global.client.RestClientConfig;
 import harme.music.dto.*;
+import harme.music.entity.MusicEntity;
+import harme.music.repository.MusicsRepository;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -15,9 +21,14 @@ import java.util.List;
 public class MusicService {
     private final OpenAiChatModel openAiChatModel;
     private final RestClientConfig restClient;
+    private final MusicsRepository musicRepository;
+
     final String ENTER = "\n";
 
-    public void create(MusicRequestDto musicRequestDto) {
+    @Value("${client.musicUrl}")
+    String musicUrl;
+
+    public MusicResponseDto create(MusicRequestDto musicRequestDto) {
         log.info("text = {}", musicRequestDto.concatString());
 
         String keyword = generateKeywords(musicRequestDto.concatString());
@@ -34,21 +45,27 @@ public class MusicService {
 
         String enTitle = translate(title);
 
-        generateMusic(lyrics, enTitle, enKeywords.toString());
+        MusicGenerateResponseDto generateMusic = generateMusic(lyrics, enTitle, enKeywords.toString())[0];
+
+        musicRepository.save(MusicEntity.builder()
+                .userId(Long.valueOf(musicRequestDto.getUserId()))
+                .musicName(generateMusic.getId())
+                .musicTitle(title)
+                .musicLyrics(lyrics)
+                .musicUrl(generateMusic.getAudio_url())
+                .musicCreatedAt(LocalDateTime.now())
+                .build());
+
+
+        return MusicResponseDto.builder()
+                .musicId(generateMusic.getId())
+                .lyrics(lyrics)
+                .keyword(keyword)
+                .build();
     }
 
-    private void generateMusic(String lyrics, String enTitle, String keyword) {
-        log.info("in = {}, {}, {}", lyrics, enTitle, keyword);
-        log.info("object = {}", MusicGenerateRequestDto
-                .builder()
-                .prompt(lyrics)
-                .tags(keyword)
-                .title(enTitle)
-                .model("chirp-v3-5")
-                .make_instrumental("False")
-                .wait_audio("True"));
-
-        MusicGenerateResponseDto[] s = restClient.musicClient().post().uri("http://43.201.54.73:3000/api/custom_generate")
+    private MusicGenerateResponseDto[] generateMusic(String lyrics, String enTitle, String keyword) {
+        return restClient.musicClient().post().uri(musicUrl)
                 .body(MusicGenerateRequestDto
                         .builder()
                         .prompt(lyrics)
@@ -59,7 +76,6 @@ public class MusicService {
                         .wait_audio("true")
                         .build()
                 ).retrieve().body(MusicGenerateResponseDto[].class);
-        log.info("music = {}", s[0].getAudio_url());
     }
 
     private String vaild(String translate) {
@@ -104,7 +120,7 @@ public class MusicService {
     public String generateKeywords(String text) {
         StringBuffer keyword = new StringBuffer();
 
-        keyword.append("The user has provided a text describing a song style. Extract the main keywords from this text that summarize its core elements. Keywords are a single word(noun) and less than seven.")
+        keyword.append("The user has provided a text describing a song style. Extract the main keywords from this text that summarize its core elements.\nKeywords are a single word(noun) and less than six.")
                 .append(ENTER).append(ENTER)
                 .append("Example:")
                 .append(ENTER)
@@ -231,5 +247,16 @@ public class MusicService {
                 .retrieve()
                 .body(TransResponseDto.class)
                 .getTranslations().get(0).getText();
+    }
+
+    public List<MainMusicResponseDto> findFourMusic() {
+        List<MainMusicResponseDto> list = musicRepository.findByFourMusic().stream().map(i -> MainMusicResponseDto.builder()
+                .musicId(String.valueOf(i.getMusicId()))
+                .musicTitle(i.getMusicTitle())
+                .musicImage(i.getMusicImage())
+                .userNickName(i.getUser().getNickName())
+                .build()).collect(Collectors.toList());
+
+        return list;
     }
 }

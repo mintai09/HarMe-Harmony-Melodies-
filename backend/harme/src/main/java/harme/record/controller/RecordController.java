@@ -6,7 +6,7 @@ import harme.record.dto.request.RecordMakingRequestDto;
 import harme.record.dto.response.RecordDetailResponseDto;
 import harme.record.dto.response.RecordResponseDto;
 import harme.record.service.RecordService;
-import harme.music.listening.service.MusicService;
+import harme.music.listening.service.OPService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ import java.util.List;
 @Tag(name = "Record-Controller", description = "레코드 API")
 public class RecordController {
 
-    private final MusicService musicService;
+    private final OPService musicService;
     private final RecordService recordService;
 
 

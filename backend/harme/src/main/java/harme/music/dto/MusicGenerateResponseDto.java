@@ -9,7 +9,7 @@ public class MusicGenerateResponseDto {
     private String id;
     private String title;
     private String image_url;
-    private String lyric;
+    private String lyrics;
     private String audio_url;
     private String video_url;
     private String created_at;
