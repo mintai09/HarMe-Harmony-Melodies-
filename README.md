@@ -58,13 +58,13 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 
 ### 2. 앨범 만들기
 <img src=https://github.com/user-attachments/assets/18168dba-fa6d-4d2e-87a2-6999a12dce64 width="180" height="420"></img>
-<img src="/makeImage.gif" width="180" height="420"></img>
+<img src="/images/makeImage.gif" width="180" height="420"></img>
 <br>
 
 
 ### 3. 기록 기능
 <img src=https://github.com/user-attachments/assets/af1157b8-2670-4406-b410-2c97381ee5fe width="180" height="420"></img>
-<img src=https://github.com/user-attachments/assets/40921391-281b-4ee2-bc2b-a89e0f131bf5 width="180" height="420"></img>
+<img src=https://github.com/user-attachments/assets/40921391-281b-4ee2-bc2b-a89e0f131bf5 width="190" height="420"></img>
 <br>
 
 
