@@ -1,4 +1,6 @@
 # HarMe(Harmony-Melodies) - 생성형 AI를 활용한 작곡 서비스
+![image](https://github.com/user-attachments/assets/1c1de10c-a6b3-403f-8e70-d4e952830d67)
+
 
 https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 
@@ -34,6 +36,22 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 <br>
 
 ## 💡 주요 기능
+### 1. 작곡 기능
+<img src=https://github.com/user-attachments/assets/1686b56b-fbfe-4fd1-905e-caa9900c36ce width="180" height="420"></img>
+<img src=https://github.com/user-attachments/assets/0f81ad00-4676-4d46-8e27-cf2ba20bd70e width="170" height="420"></img>
+<img src=https://github.com/user-attachments/assets/8c44ac4e-d5cd-4e90-a1a3-bcbe221090ff width="160" height="420"></img>
+<img src=https://github.com/user-attachments/assets/8a315e57-25e7-423f-be4c-c67029f0404c width="160" height="420"></img>
+<img src=https://github.com/user-attachments/assets/c2c4bf2f-7799-4598-91f3-8809001b8fc0 width-="170" height="420"></img>
+<img src=https://github.com/user-attachments/assets/b1605cae-7015-4627-adc0-188d0fbd344c width="170" height="420"></img>
+
+
+### 2. 
+
+
+
+
+
+3. 기록 기능
 <img src="https://github.com/user-attachments/assets/e897a9a1-d882-4e23-a57c-d7866e3c393b" width="80%"></img>
 
 <br>
@@ -42,17 +60,14 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 <img src="https://github.com/user-attachments/assets/c30ab7ca-d6ce-4d68-b717-cf2cd93860bb" width="80%"></img>
 <br>
 
-## 💖 ERD
-
-#### 🔗 [erdcloud]()
-
-<br>
 
 ## 📝 설계 문서
 
-#### 🔗 [기능명세서](https://better-jumpsuit-1f8.notion.site/3eb7c54faee1405a9340949eeeacb4bb?pvs=4)
+### 🔗 [erdcloud](https://www.erdcloud.com/d/mWFhqQ7DPSYGKnLnt)
 
-#### 🔗 [API 명세서](https://better-jumpsuit-1f8.notion.site/Api-03be9726dc4246ebaea6bc1310bfed29?pvs=4)
+### 🔗 [기능명세서](https://better-jumpsuit-1f8.notion.site/3eb7c54faee1405a9340949eeeacb4bb?pvs=4)
+
+### 🔗 [Swagger](http://43.201.54.73:8081/swagger-ui/index.html)
 
 <br>
 
