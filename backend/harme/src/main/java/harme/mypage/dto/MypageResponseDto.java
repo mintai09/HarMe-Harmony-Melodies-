@@ -1,4 +1,4 @@
-package harme.mypage.dto.Response;
+package harme.mypage.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

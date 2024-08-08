@@ -28,7 +28,7 @@ public class MusicEntity {
     @Column(name = "music_title", nullable = false)
     private String musicTitle;
 
-//    @Lob
+    //    @Lob
     @Column(name = "music_image", length = 500)
     private String musicImage;
 
@@ -42,8 +42,8 @@ public class MusicEntity {
     private LocalDateTime musicCreatedAt;
 
     @Builder
-    MusicEntity(String musicName, Long userId, String musicTitle, String musicImage, String musicLyrics, String musicUrl, LocalDateTime musicCreatedAt){
-        this.musicName= musicName;
+    MusicEntity(String musicName, Long userId, String musicTitle, String musicImage, String musicLyrics, String musicUrl, LocalDateTime musicCreatedAt) {
+        this.musicName = musicName;
         this.user_id = userId;
         this.musicTitle = musicTitle;
         this.musicImage = musicImage;
@@ -52,7 +52,7 @@ public class MusicEntity {
         this.musicCreatedAt = musicCreatedAt;
     }
 
-    public void setImageUrl(String imageUrl){
+    public void setImageUrl(String imageUrl) {
         this.musicImage = imageUrl;
     }
 }

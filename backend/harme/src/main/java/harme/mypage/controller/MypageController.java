@@ -1,6 +1,6 @@
 package harme.mypage.controller;
 
-import harme.mypage.dto.Response.MypageResponseDto;
+import harme.mypage.dto.MypageResponseDto;
 import harme.mypage.service.MypageService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

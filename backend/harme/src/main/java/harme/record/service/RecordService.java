@@ -2,10 +2,10 @@ package harme.record.service;
 
 import harme.music.entity.MusicEntity;
 import harme.music.listening.repository.MusicRepository;
-import harme.record.dto.request.RecordDetailRequestDto;
-import harme.record.dto.request.RecordMakingRequestDto;
-import harme.record.dto.response.RecordDetailResponseDto;
-import harme.record.dto.response.RecordResponseDto;
+import harme.record.dto.RecordDetailRequestDto;
+import harme.record.dto.RecordMakingRequestDto;
+import harme.record.dto.RecordDetailResponseDto;
+import harme.record.dto.RecordResponseDto;
 import harme.record.entity.RecordEntity;
 import harme.record.repository.RecordRepository;
 import harme.user.entity.UserEntity;

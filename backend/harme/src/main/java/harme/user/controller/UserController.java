@@ -21,6 +21,7 @@ import java.util.Optional;
 public class UserController {
     private final UserService userService;
 
+
     @PostMapping("/login")
     @Operation(summary = "유저 로그인", description = "기존에 회원가입한 정보를 입력해 로그인")
     public ResponseEntity<UserResponseDto> login(@RequestBody UserRequestDto userRequestDto) {

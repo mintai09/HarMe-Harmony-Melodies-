@@ -1,4 +1,4 @@
-package harme.record.dto.response;
+package harme.record.dto;
 
 import harme.music.listening.dto.response.MusicResponseDto;
 import lombok.AllArgsConstructor;

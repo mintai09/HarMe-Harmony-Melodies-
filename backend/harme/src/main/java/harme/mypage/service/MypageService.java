@@ -1,7 +1,6 @@
 package harme.mypage.service;
 
-import harme.music.entity.MusicEntity;
-import harme.mypage.dto.Response.MypageResponseDto;
+import harme.mypage.dto.MypageResponseDto;
 import harme.mypage.repository.MypageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

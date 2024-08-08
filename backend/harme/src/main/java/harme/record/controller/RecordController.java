@@ -1,10 +1,10 @@
 package harme.record.controller;
 
 import harme.music.listening.dto.response.MusicResponseDto;
-import harme.record.dto.request.RecordDetailRequestDto;
-import harme.record.dto.request.RecordMakingRequestDto;
-import harme.record.dto.response.RecordDetailResponseDto;
-import harme.record.dto.response.RecordResponseDto;
+import harme.record.dto.RecordDetailRequestDto;
+import harme.record.dto.RecordMakingRequestDto;
+import harme.record.dto.RecordDetailResponseDto;
+import harme.record.dto.RecordResponseDto;
 import harme.record.service.RecordService;
 import harme.music.listening.service.OPService;
 import io.swagger.v3.oas.annotations.tags.Tag;

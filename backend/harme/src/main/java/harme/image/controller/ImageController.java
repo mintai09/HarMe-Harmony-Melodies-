@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/image")
@@ -17,7 +19,7 @@ public class ImageController {
     private final ImageService imageService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> imageCreate(@RequestBody ImageRequestDto imageRequestDto) {
+    public ResponseEntity<String> imageCreate(@RequestBody ImageRequestDto imageRequestDto) throws IOException {
         return ResponseEntity.ok(imageService.imageCreate(imageRequestDto));
     }
 

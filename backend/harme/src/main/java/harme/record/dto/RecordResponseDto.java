@@ -1,4 +1,4 @@
-package harme.record.dto.response;
+package harme.record.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
