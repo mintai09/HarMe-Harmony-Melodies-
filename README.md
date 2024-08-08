@@ -77,7 +77,7 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 
 ### 🔗 [서비스 아키텍쳐]
 
-<img src="./images/Harme-SystemArchitecture.png" width="640" height="480">
+<img src="./images/Harme-SystemArchitecture.png">
 
 ### 🔗 [기능명세서](https://better-jumpsuit-1f8.notion.site/3eb7c54faee1405a9340949eeeacb4bb?pvs=4)
 
