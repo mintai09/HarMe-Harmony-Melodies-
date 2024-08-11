@@ -79,30 +79,29 @@ public class ImageService {
         int cnt = 1024;
         String url = "";
 
-        try (ByteArrayOutputStream out = new ByteArrayOutputStream(cnt)) {
+        ByteArrayOutputStream out = new ByteArrayOutputStream(cnt);
 
-            int offset = 0;
-            while (offset < image.length) {
-                int chunkSize = Math.min(cnt, image.length - offset);
+        int offset = 0;
+        while (offset < image.length) {
+            int chunkSize = Math.min(cnt, image.length - offset);
 
-                byte[] byteArray = new byte[chunkSize];
-                System.arraycopy(image, offset, byteArray, 0, chunkSize);
+            byte[] byteArray = new byte[chunkSize];
+            System.arraycopy(image, offset, byteArray, 0, chunkSize);
 
-                out.write(byteArray);
-                out.flush();
+            out.write(byteArray);
+            out.flush();
 
-                offset += chunkSize;
-            }
-
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(out.toByteArray());
-
-            MultipartFile multipartFile = new MockMultipartFile(UUID.randomUUID() + ".jpg", byteArrayInputStream.readAllBytes());
-
-            url = upload(multipartFile);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            offset += chunkSize;
         }
+
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(out.toByteArray());
+
+        MultipartFile multipartFile = new MockMultipartFile(UUID.randomUUID() + ".jpg", byteArrayInputStream.readAllBytes());
+
+        url = upload(multipartFile);
+
+        out.close();
+        byteArrayInputStream.close();
 
         return url;
     }

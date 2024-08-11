@@ -17,9 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Tag(name = "Mypage-Controller", description = "마이페이지 API")
 public class MypageController {
-
     private final MypageService mypageService;
-
 
     /**
      * 사용자의 노래리스트 보기

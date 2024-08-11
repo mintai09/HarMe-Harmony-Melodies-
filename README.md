@@ -7,13 +7,14 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 # 📌 목차
 
 - [README](#readme)
+
   - [🤔 기획 배경](#-기획-배경)
   - [💡 주요 기능](#-주요-기능)
+  - [🚧 시스템 아키텍쳐](#-시스템-아키텍쳐)
   - [📝 설계 문서](#-설계-문서)
     - ERD
     - 기능 명세서
     - Swagger
-  - [🚧 서비스 아키텍쳐](#-서비스-아키텍쳐)
   - [🛠 기술 스택](#-기술-스택)
   - [📂 파일 구조](#-파일-구조)
   - [🐰 팀원 소개](#-팀원-소개)
@@ -71,13 +72,17 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 <img src=https://github.com/user-attachments/assets/40921391-281b-4ee2-bc2b-a89e0f131bf5 width="190" height="420"></img>
 <br>
 
-## 🔗 설계 문서
-
-### 🔗 [ERD](https://www.erdcloud.com/d/mWFhqQ7DPSYGKnLnt)
-
-### 🔗 [서비스 아키텍쳐]
+## 🚧 시스템 아키텍쳐
 
 <img src="./images/Harme-SystemArchitecture.png">
+
+<br>
+
+## 🔗 설계 문서
+
+### 🔗 [ERD]
+
+<img src="./images/Harme-erd.png">
 
 ### 🔗 [기능명세서](https://better-jumpsuit-1f8.notion.site/3eb7c54faee1405a9340949eeeacb4bb?pvs=4)
 
@@ -120,14 +125,21 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 ┃ ┃ ┗ 📜RestClientConfig
 ┃ ┣ 📂docs
 ┃ ┃ ┗ 📜SwaggerConfig
+┃ ┣ 📂error
+┃ ┃ ┣ 📂custom
+┃ ┃ ┃ ┗ 📜RecordNotFoundException
+┃ ┃ ┣ 📜ErrorCode
+┃ ┃ ┗ 📜ErrorResponse
+┃ ┣ 📂exception
+┃ ┃ ┗ 📜GlobalExceptionHandler
 ┃ ┣ 📂s3
 ┃ ┃ ┣ 📜S3Config
 ┣ 📂image
 ┃ ┣ 📂controller
-┃ ┃ ┣ 📜ImageController
+┃ ┃ ┗ 📜ImageController
 ┃ ┣ 📂dto
 ┃ ┃ ┣ 📜ImageRequestDto
-┃ ┃ ┣ 📜ImageResponseDto
+┃ ┃ ┗ 📜ImageResponseDto
 ┃ ┣ 📂service
 ┃ ┃ ┗ 📜ImageController
 ┣ 📂music
@@ -141,41 +153,41 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 ┃ ┃ ┣ 📜MusicResponseDto
 ┃ ┃ ┣ 📜Translate
 ┃ ┃ ┣ 📜TransRequestDto
-┃ ┃ ┣ 📜TransResponseDto
+┃ ┃ ┗ 📜TransResponseDto
 ┃ ┣ 📂entity
-┃ ┃ ┣ 📜MusicEntity
+┃ ┃ ┗ 📜MusicEntity
 ┃ ┣ 📂repository
-┃ ┃ ┣ 📜MusicsRepository
+┃ ┃ ┗ 📜MusicsRepository
 ┃ ┣ 📂service
 ┃ ┃ ┗ 📜MusicService
 ┣ 📂mypage
 ┃ ┣ 📂controller
-┃ ┃ ┣ 📜MypageController
+┃ ┃ ┗ 📜MypageController
 ┃ ┣ 📂dto
 ┃ ┃ ┣ 📜MypageRequestDto
-┃ ┃ ┣ 📜MypageResponseDto
+┃ ┃ ┗ 📜MypageResponseDto
 ┃ ┣ 📂entity
-┃ ┃ ┣ 📜PlayEntity
+┃ ┃ ┗ 📜PlayEntity
 ┃ ┣ 📂repository
-┃ ┃ ┣ 📜MypageRepository
+┃ ┃ ┗ 📜MypageRepository
 ┃ ┣ 📂service
 ┃ ┃ ┗ 📜MypageService
 ┣ 📂record
 ┃ ┣ 📂controller
-┃ ┃ ┣ 📜RecordController
+┃ ┃ ┗ 📜RecordController
 ┃ ┣ 📂dto
 ┃ ┃ ┣ 📜LatestRecordsAndMusicResponse
 ┃ ┃ ┣ 📜RecordDetailRequestDto
 ┃ ┃ ┣ 📜RecordDetailResponseDto
 ┃ ┃ ┣ 📜RecordMakingRequestDto
 ┃ ┃ ┣ 📜RecordRequestDto
-┃ ┃ ┣ 📜RecordResponseDto
+┃ ┃ ┗ 📜RecordResponseDto
 ┃ ┣ 📂entity
-┃ ┃ ┣ 📜RecordEntity
+┃ ┃ ┗ 📜RecordEntity
 ┃ ┣ 📂exception
-┃ ┃ ┣ 📜RecordNotFoundException
+┃ ┃ ┗ 📜RecordNotFoundException
 ┃ ┣ 📂repository
-┃ ┃ ┣ 📜RecordRepository
+┃ ┃ ┗ 📜RecordRepository
 ┃ ┣ 📂service
 ┃ ┃ ┗ 📜RecordService
 ┣ 📂user
@@ -183,14 +195,14 @@ https://github.com/user-attachments/assets/ec7ac9de-3d87-4f96-bc89-a59ac0f62c24
 ┃ ┃ ┣ 📜UserController
 ┃ ┣ 📂dto
 ┃ ┃ ┣ 📜UserRequestDto
-┃ ┃ ┣ 📜UserResponseDto
+┃ ┃ ┗ 📜UserResponseDto
 ┃ ┣ 📂entity
-┃ ┃ ┣ 📜UserEntity
+┃ ┃ ┗ 📜UserEntity
 ┃ ┣ 📂repository
-┃ ┃ ┣ 📜UserRepository
+┃ ┃ ┗ 📜UserRepository
 ┃ ┣ 📂service
 ┃ ┃ ┗ 📜UserService
-┃ ┗ 📜HarmeApplication
+┗ 📜HarmeApplication
 ```
 
 </div>
